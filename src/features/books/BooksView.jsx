@@ -7,7 +7,7 @@ const BooksView = () => {
     return (
         <div>
             <h2>List Of Books</h2>
-            <table className="w-full text-sm text-left text-red-500 dark:text-red-400">
+            <table className="w-1/2 text-sm text-left text-red-500 dark:text-red-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th>ID</th>
