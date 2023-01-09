@@ -6,6 +6,7 @@ const AddBook = () => {
     const [author, setAuthor] = useState("");
 
     const numOfBooks = useSelector(state => state.booksReducer.books.length);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const book = { id: numOfBooks + 1, title, author };
