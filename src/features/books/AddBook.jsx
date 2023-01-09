@@ -7,7 +7,7 @@ const AddBook = () => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const numOfBooks = useSelector(state => state.booksReducer.books.length);
 
@@ -16,6 +16,7 @@ const AddBook = () => {
         const book = { id: numOfBooks + 1, title, author };
         // console.log(book);
         dispatch(addBook(book));
+        navigate("/display-books", { replace: true });
     }
 
     return (
