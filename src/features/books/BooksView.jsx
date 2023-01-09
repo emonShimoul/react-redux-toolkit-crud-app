@@ -4,6 +4,10 @@ import { useSelector } from 'react-redux';
 const BooksView = () => {
     const books = useSelector((state) => state.booksReducer.books);
     // console.log(books);
+    const handleDeleteBook = (id) => {
+
+    }
+
     return (
         <div>
             <h2>List Of Books</h2>
@@ -26,7 +30,7 @@ const BooksView = () => {
                             <td>
                                 <button className='text-red-500'>Edit</button>
                                 <span> || </span>
-                                <button className='text-green-500'>Delete</button>
+                                <button onClick={() => handleDeleteBook(id)} className='text-green-500'>Delete</button>
                             </td>
                         </tr>
                     })}
