@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const AddBook = () => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
+
+    const numOfBooks = useSelector(state => state.booksReducer.books.length);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const book = { title, author };
+        const book = { id: numOfBooks + 1, title, author };
+        console.log(book);
     }
 
     return (
