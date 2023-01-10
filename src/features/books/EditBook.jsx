@@ -7,14 +7,13 @@ const EditBook = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // console.log(location);
+
     const [id, setId] = useState(location.state.id);
     const [title, setTitle] = useState(location.state.title);
     const [author, setAuthor] = useState(location.state.author);
 
     const handleSubmit = e => {
         e.preventDefault();
-        // {id, title, author} 
         dispatch(updateBook({ id, title, author }));
         navigate("/display-books", { replace: true });
     }
