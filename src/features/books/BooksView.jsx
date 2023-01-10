@@ -5,7 +5,6 @@ import { deleteBook } from './BooksSlice';
 
 const BooksView = () => {
     const books = useSelector((state) => state.booksReducer.books);
-    // console.log(books);
     const dispatch = useDispatch();
     const handleDeleteBook = (id) => {
         dispatch(deleteBook(id));
