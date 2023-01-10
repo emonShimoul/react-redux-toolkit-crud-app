@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { updateBook } from './BooksSlice';
 
 const EditBook = () => {
     const location = useLocation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     // console.log(location);
     const [id, setId] = useState(location.state.id);
     const [title, setTitle] = useState(location.state.title);
@@ -15,6 +16,7 @@ const EditBook = () => {
         e.preventDefault();
         // {id, title, author} 
         dispatch(updateBook({ id, title, author }));
+        navigate("/display-books", { replace: true });
     }
 
     return (
