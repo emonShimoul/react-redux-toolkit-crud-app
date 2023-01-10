@@ -8,10 +8,15 @@ const EditBook = () => {
     const [title, setTitle] = useState(location.state.title);
     const [author, setAuthor] = useState(location.state.author);
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        // {id, title, author} = 
+    }
+
     return (
         <div>
             <h2>Edit Book</h2>
-            <form className='mt-8'>
+            <form onSubmit={handleSubmit} className='mt-8'>
                 <div className='mb-4'>
                     <label htmlFor="title">Title: </label>
                     <input className='border border-black' type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} required />
@@ -20,7 +25,7 @@ const EditBook = () => {
                     <label htmlFor="author">Author: </label>
                     <input className='border border-black' type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} required />
                 </div>
-                <button className='bg-black text-white py-2 px-4 mt-4' type='submit'>Add Book</button>
+                <button className='bg-black text-white py-2 px-4 mt-4' type='submit'>Update Book</button>
             </form>
         </div>
     );
